@@ -1,0 +1,17 @@
+<h3 class="mt-2">List of categories</h3>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Short Name</th>
+        <th scope="col">Show Items</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in $ctrl.items">
+        <td>{{item.name}}</td>
+        <td>{{item.short_name}}</td>
+        <td><button class="btn btn-success btn-block" ui-sref="items({categoryId:item.short_name})">Show items</button></td>
+      </tr>
+    </tbody>
+  </table>

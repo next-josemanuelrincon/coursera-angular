@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <!-- Modules -->
+    <script src="menuapp.module.js"></script>
+    <script src="data.module.js"></script>
+    <!-- Components-->
+    <script src="categories.component.js"></script>
+    <script src="items.component.js"></script>
+    <!-- Controller -->
+    <script src="menuapp.controller.js"></script>
+    <!--Services-->
+    <script src="menudata.service.js"></script>
+    <!--Routes-->
+    <script src="routes.js"></script>
+  </head>
+<body ng-app="MenuApp">
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+    <div class="container-fluid">
+      <span class="navbar-brand">MenuApp</span>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" ui-sref="home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ui-sref="categories">Categories</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <ui-view></ui-view>
+</body>
+</html>
