@@ -1,17 +1,19 @@
-<h3 class="mt-2">List of menus</h3>
-<table class="table table-striped">
+<div class="table-responsive">
+  <table class="table table-striped caption-top">
+    <caption>List of Menus</caption>
     <thead>
       <tr>
-        <th scope="col">Category</th>
         <th scope="col">Short Name</th>
+        <th scope="col">Name</th>
         <th scope="col">Description</th>
       </tr>
     </thead>
     <tbody>
       <tr ng-repeat="item in $ctrl.items">
-        <td>{{item.name}}</td>
         <td>{{item.short_name}}</td>
+        <td>{{item.name}}</td>
         <td>{{item.description}}</td>
       </tr>
     </tbody>
   </table>
+</div>
