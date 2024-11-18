@@ -1,0 +1,44 @@
+<div class="container">
+    <form name="regForm" novalidate>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>First Name</label>
+                <input type="text" class="form-control" name="firstname" placeholder="First Name"
+                    ng-model="reg.user.firstname" required minlength="4" ng-maxlength="12">
+                    <div class="alert alert-danger" role="alert" ng-if="(regForm.firstname.$error.minlength || regForm.firstname.$required) && regForm.firstname.$touched">
+                       Required 4 min characters
+                    </div>                    
+            </div>
+            <div class="form-group col-md-6">
+                <label>Last Name</label>
+                <input type="text" class="form-control" name="lastname" placeholder="First Name" ng-model="reg.user.lastname" required minlength="4" ng-maxlength="12">
+                    <div class="alert alert-danger" role="alert" ng-if="(regForm.lastname.$error.minlength || regForm.lastname.$required) && regForm.firstname.$touched">
+                        Required 4 min characters
+                    </div> 
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-12">
+                <label>Email address</label>
+                <input type="email" class="form-control" name="email" placeholder="Enter email" ng-model="reg.user.email" required minlength="2" ng-maxlength="36">
+                <div class="alert alert-danger" role="alert" ng-if="regForm.email.$touched && regForm.email.$invalid">
+                   Invalid Email
+                </div> 
+            </div>
+            <div class="form-group col-md-12">
+                <select class="custom-select form-control" name="menu" ng-options="item for item in signUpCrtl.menuItems"
+                    id="$index" ng-model="reg.user.menu" required pattern="(\w{1}\d{1,2}) - (.*)">
+                </select>
+                <div class="alert alert-danger" role="alert" ng-if="(regForm.menu.$touched && regForm.menu.$invalid) || regForm.menu == Null">
+                    Invalid Menu
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-1">
+                    <button type="submit" class="btn btn-warning col-md" ng-disabled="regForm.$invalid" ng-click="signUpCrtl.submit()">Submit</button>
+                </div>
+            </div>
+        </div>
+</div>
+</form>
+</div>

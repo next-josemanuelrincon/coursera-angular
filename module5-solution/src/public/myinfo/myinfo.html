@@ -1,0 +1,29 @@
+<div class="alert alert-warning" role="alert" ng-if="myInfoCtrl.show">
+    Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a>
+</div>
+<div class="container" ng-if="!myInfoCtrl.show">
+    <caption>My info</caption>
+      <table class="table caption-top">
+        <thead>
+          <tr>
+            <th scope="col">Avatar</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">My fav dish</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img style="width: 5rem;" ng-src="https://api.multiavatar.com/{{myInfoCtrl.dishCategory}}.svg" alt="avatar"></td>
+            <td>{{myInfoCtrl.firstname}}</td>
+            <td>{{myInfoCtrl.lastname}}</td>
+            <td>{{myInfoCtrl.email}}</td>
+            <td>{{myInfoCtrl.dishTitle}}</td>
+            <td><img style="width: 15rem;" ng-src="images/menu/{{myInfoCtrl.dishCategory}}/{{myInfoCtrl.dishImage}}.jpg" alt="Fav dish"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
